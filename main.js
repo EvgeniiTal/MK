@@ -132,7 +132,7 @@ $random.addEventListener ('click', function() {
     } else if (player2.hp === 0 && player2.hp < player1.hp){
         $arenas.appendChild(playerWins(player1.name));
     } else if (player1.hp === 0 && player2.hp === 00) {
-        $arenas.appendChild(playerWins())
+        $arenas.appendChild(playerWins());
     }
 })
 
