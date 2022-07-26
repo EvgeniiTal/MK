@@ -156,14 +156,19 @@ $formFight.addEventListener('submit', function(e) {
 
         item.checked = false
     }
-    console.log('####:a', attack);
-    console.log('####:e', enemy);
 
-    player1.changeHP(getRandom(attack.value));
-     player1.renderHP();
 
-     player2.changeHP(getRandom(attack.value));
-     player2.renderHP();
+    if (attack.hit !== enemy.defence){
+        player2.changeHP(attack.value);
+        player2.renderHP();
+    }
+    
+
+    if (enemy.hit !== attack.defence){
+        player1.changeHP(enemy.value);
+        player1.renderHP();
+    }
+    
     
      if (player2.hp === 0 || player1.hp === 0) {
          $formFight.disabled = true;
